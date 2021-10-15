@@ -7,9 +7,62 @@
     <title>Pokemon</title>
     <link rel="stylesheet" href="/styles/styles.css" />
     <link rel="shortcut icon" href="img/lugia.ico" />
-    <script src="/build/app/pokemon-app.js" type="module"></script>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script src="app/pokemon-app.js" type="module"></script>
   </head>
   <body>
-    <div class="container"></div>
+    <div class="container">
+      <header class="header">
+        <h1>
+          <img
+            class="header__image"
+            src="/build/img/logo-pokemon.png"
+            alt="Logo Pokemon"
+            width="100px;"
+          />
+        </h1>
+      </header>
+      <main>
+        <nav class="menu">
+          <ul class="menu__list">
+            <li class="menu__nav">
+              <img
+                src="img/nav-my-album.png"
+                alt="Person with pokeball"
+                width="25px;"
+              />
+            </li>
+            <li class="menu__nav">
+              <img
+                src="img/nav-detail.png"
+                alt="Mobile with pokeball inside"
+                width="30px;"
+              />
+            </li>
+          </ul>
+        </nav>
+        <ul class="gallery">
+          <li class="pokemon-card">
+            <img
+              class="pokemon-card__pokeball"
+              src="img/logo-pokeball-vacio.png"
+              alt="Logo empty pokeball"
+            />
+            <h2 class="pokemon-card__name">Togepi</h2>
+            <p class="pokemon-card__id">#1</p>
+            <div class="pokemon-card__image">
+              <div></div>
+              <img
+                src="img/togepi.png"
+                alt="Pokemon Togepi"
+                width="100px"
+                height="100px"
+              />
+            </div>
+          </li>
+        </ul>
+      </main>
+      <footer></footer>
+    </div>
   </body>
 </html>

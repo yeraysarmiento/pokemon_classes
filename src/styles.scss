@@ -1,0 +1,33 @@
+@import "./variables";
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  background: lightblue;
+  max-width: 850px;
+  height: 1500px;
+}
+
+.header {
+  position: fixed;
+  left: 65px;
+}
+
+.menu {
+  position: fixed;
+
+  &__list {
+    padding: 0;
+    width: 30px;
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 500px;
+    background: $main-color;
+  }
+}

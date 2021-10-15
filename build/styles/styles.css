@@ -1,0 +1,32 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  background: lightblue;
+  max-width: 850px;
+  height: 1500px;
+}
+
+.header {
+  position: fixed;
+  left: 65px;
+}
+
+.menu {
+  position: fixed;
+}
+.menu__list {
+  padding: 0;
+  width: 30px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 500px;
+  background: #be5b3e;
+}
+
+/*# sourceMappingURL=styles.css.map */
