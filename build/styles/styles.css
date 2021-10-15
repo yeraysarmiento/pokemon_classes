@@ -61,12 +61,20 @@ h1 {
 .menu__list {
   width: 100%;
   list-style: none;
-  background: green;
 }
 .menu__icon {
+  background: green;
+  height: 100px;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 2px;
+}
+.menu__icon:nth-of-type(1) {
+  border-radius: 15px 15px 0 0;
+}
+.menu__icon:nth-of-type(2) {
+  border-radius: 0 0 15px 15px;
 }
 
 /*# sourceMappingURL=styles.css.map */
