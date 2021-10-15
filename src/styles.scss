@@ -1,8 +1,17 @@
 @import "./variables";
 
-body {
-  padding: 0;
+* {
   margin: 0;
+  padding: 0;
+}
+
+body {
+  box-sizing: border-box;
+}
+
+h1 {
+  margin: 0;
+  padding: 0;
 }
 
 .container {
@@ -10,24 +19,59 @@ body {
   background: lightblue;
   max-width: 850px;
   height: 1500px;
+  position: relative;
+
+  & > div {
+    display: flex;
+    text-align: center;
+    background: green;
+    height: 100vh;
+  }
 }
 
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
-  left: 65px;
+  margin-left: 15px;
+  position: fixed;
+  height: 100vh;
+
+  & > div {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__image {
+    position: absolute;
+    left: 50px;
+  }
 }
 
 .menu {
-  position: fixed;
+  background: $main-color;
+  min-height: 500px;
+  height: 80vh;
+  width: 30px;
+  border-radius: 15px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   &__list {
-    padding: 0;
-    width: 30px;
-    border-radius: 15px;
+    width: 100%;
+    list-style: none;
+    background: green;
+  }
+
+  &__icon {
     display: flex;
+    align-items: center;
     justify-content: center;
-    flex-direction: column;
-    height: 500px;
-    background: $main-color;
   }
 }
