@@ -8,6 +8,8 @@ module.exports = {
   extends: ["airbnb-base", "prettier"],
   parserOptions: {
     ecmaVersion: 12,
+    sourceType: "module",
+    requireConfigFile: false,
   },
   rules: {
     "no-param-reassign": "off",
@@ -16,5 +18,7 @@ module.exports = {
     "consistent-return": "off",
     "no-debugger": "off",
     "no-console": "off",
+    "lines-between-class-members": "off",
   },
+  parser: "@babel/eslint-parser",
 };
