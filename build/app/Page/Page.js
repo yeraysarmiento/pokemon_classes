@@ -1,17 +1,32 @@
 import Component from "../Component/Component.js";
 import Service from "../Service/Service.js";
 import PokeCard from "../PokeCard/PokeCard.js";
+import Button from "../Button/Button.js";
 
 class Page extends Component {
   pokemonArray;
   urlPokemon;
-  nrPokemons = 50;
+  nrPokemon = 50;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
     this.urlPokemon = urlPokemon;
 
     this.generateHTML();
+
+    let pagePokemons = document.querySelector(".control-container");
+
+    let lessPokemonsButton = new Button(
+      pagePokemons,
+      "control-container__left",
+      this.getLessPokemons
+    );
+
+    let morePokemonsButton = new Button(
+      pagePokemons,
+      "control-container__right",
+      this.getMorePokemons
+    );
   }
 
   generateHTML() {
@@ -33,8 +48,7 @@ class Page extends Component {
               <li class="menu__icon"></li>
             </ul>
             <div class="control-container">
-              <button class="control-container__left"></button>
-              <button class="control-container__right"></button>
+
             </div>
           </nav>
         </div>
@@ -67,6 +81,13 @@ class Page extends Component {
           )
       );
     })();
+  }
+
+  getMorePokemons() {
+    let initialPokemons = this.nrPokemons;
+    this.nrPokemons = this.nrPokemons + 50;
+    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${this.nrPokemons}&limit=${initialPokemons}`;
+    this.generateHTML();
   }
 }
 
