@@ -13,11 +13,15 @@ class Page extends Component {
     this.urlPokemon = urlPokemon;
 
     this.generateHTML();
+    this.generateCards();
+    this.generateButtons();
   }
 
   getMorePokemons() {
+    console.log(nrPokemons);
     this.nrPokemons = this.nrPokemons + 50;
     this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${this.nrPokemons}&limit=50`;
+
     this.generateHTML();
   }
 
@@ -56,6 +60,9 @@ class Page extends Component {
        `;
 
     this.element.innerHTML = html;
+  }
+
+  generateCards() {
     const pokemonContainer = document.querySelector(".gallery");
 
     (async () => {
@@ -73,12 +80,18 @@ class Page extends Component {
           )
       );
     })();
+  }
 
+  generateButtons() {
     let pagePokemons = document.querySelector(".control-container");
 
     new Button(pagePokemons, "control-container__left", this.getLessPokemons);
 
-    new Button(pagePokemons, "control-container__right", this.getMorePokemons);
+    new Button(
+      pagePokemons,
+      "control-container__right",
+      () => this.getMorePokemons
+    );
   }
 }
 
