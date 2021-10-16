@@ -73,7 +73,9 @@ class Page extends Component {
   generateButtons() {
     let pagePokemons = document.querySelector(".control-container");
 
-    new Button(pagePokemons, "control-container__left", this.getLessPokemons);
+    new Button(pagePokemons, "control-container__left", () =>
+      this.previousPage()
+    );
 
     new Button(pagePokemons, "control-container__right", () => this.nextPage());
   }
@@ -85,16 +87,23 @@ class Page extends Component {
     }
   }
 
+  previousPage() {
+    this.deleteCards();
+    this.generateNewUrl(-1);
+    this.generateCards();
+  }
+
   nextPage() {
-    console.log("hola");
     this.deleteCards();
     this.generateNewUrl(1);
     this.generateCards();
   }
 
   generateNewUrl(pageNumber) {
-    console.log("hola");
     this.nrPokemons = this.nrPokemons + pageNumber;
+    if (this.nrPokemons < 0) {
+      this.nrPokemons = 0;
+    }
     this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${
       this.nrPokemons * 50
     }&limit=50`;
