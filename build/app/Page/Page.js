@@ -1,20 +1,27 @@
 import Component from "../Component/Component.js";
+import Service from "../Service/Service.js";
 
 class Page extends Component {
-  constructor(parentElement) {
+  pokemonArray = [];
+
+  constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
+    this.urlPokemon = urlPokemon;
+
+    (async () => {
+      const getPokemon = new Service(this.urlPokemon);
+      const showPokemon = await getPokemon.getData(this.urlPokemon);
+      const pokemonArray = showPokemon.results;
+      console.log(pokemonArray);
+
+      /* this.pokemonArray.map(
+        (singlePokemon) =>
+          new pokeCard("", "pokemon-card", "li", singlePokemon.url)
+      ); */
+    })();
 
     this.generateHTML();
-
-    /* const controlsSection = this.element.querySelector(".controls");
-
-    const info = new Info(controlsSection,
-     { total= this.totalSelected.filter((gentleman) => gentleman.selected).length });
-
-    const button = new Button (controlsSection, {text: "Select all", actionOnClick: () => this.onClickButton}); */
   }
-
-  onClickButtonLeft() {}
 
   generateHTML() {
     const html = `
