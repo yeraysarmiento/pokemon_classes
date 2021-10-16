@@ -5,6 +5,7 @@
 
 body {
   box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 h1 {
@@ -15,13 +16,11 @@ h1 {
 .container {
   margin: 0 auto;
   max-width: 850px;
-  height: 1500px;
   position: relative;
 }
 .container > div {
   display: flex;
   text-align: center;
-  background: green;
   height: 100vh;
 }
 
@@ -50,6 +49,7 @@ h1 {
   min-height: 500px;
   height: 80vh;
   width: 30px;
+  max-height: 800px;
   border-radius: 15px;
   padding: 0;
   display: flex;
@@ -92,6 +92,105 @@ h1 {
 .menu__icon:nth-of-type(2):hover {
   background-color: #be5b3e;
   background-image: url(/build/img/nav-detail-white.png);
+}
+
+main {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+}
+
+.gallery {
+  width: 100%;
+  margin-left: 65px;
+  margin-top: 200px;
+  display: flex;
+  display: grid;
+  grid-template-columns: 160px 160px 160px 160px 160px;
+  grid-template-rows: 300px 300px 300px 300px 300px;
+}
+
+.pokemon-card {
+  background: lightgrey;
+  height: 260px;
+  width: 120px;
+  border-radius: 25px;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px 15px;
+}
+.pokemon-card:hover {
+  box-shadow: 1px 1px 1px black;
+}
+.pokemon-card__pokeball {
+  width: 100%;
+  height: 20px;
+  position: relative;
+  cursor: pointer;
+}
+.pokemon-card__pokeball > div {
+  border-radius: 50%;
+  background-image: url(/build/img/logo-pokeball-vacio.png);
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+  height: 20px;
+  width: 20px;
+  right: 0;
+  position: absolute;
+  opacity: 0.5;
+}
+.pokemon-card__pokeball > div:hover {
+  opacity: 1;
+}
+.pokemon-card__image {
+  margin-top: 20px;
+  width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+.pokemon-card__image > img {
+  z-index: 1;
+}
+.pokemon-card__image > div {
+  background: white;
+  opacity: 0.6;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: absolute;
+  margin-bottom: 15px;
+}
+.pokemon-card__main-info {
+  width: 100%;
+  height: 50px;
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+}
+.pokemon-card__id {
+  font-size: 10px;
+  line-height: 1.5;
+  font-weight: 400;
+  height: 15px;
+  width: 50px;
+  border-radius: 15px;
+  background: rgba(109, 109, 109, 0.4);
+  text-align: center;
+}
+.pokemon-card__name {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  padding-top: 17px;
+  font-size: 20px;
 }
 
 /*# sourceMappingURL=styles.css.map */
