@@ -5,6 +5,7 @@ import PokeCard from "../PokeCard/PokeCard.js";
 class Page extends Component {
   pokemonArray;
   urlPokemon;
+  nrPokemons = 50;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
