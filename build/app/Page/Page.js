@@ -6,27 +6,19 @@ import Button from "../Button/Button.js";
 class Page extends Component {
   pokemonArray;
   urlPokemon;
-  nrPokemon = 50;
+  nrPokemons = 0;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
     this.urlPokemon = urlPokemon;
 
     this.generateHTML();
+  }
 
-    let pagePokemons = document.querySelector(".control-container");
-
-    let lessPokemonsButton = new Button(
-      pagePokemons,
-      "control-container__left",
-      this.getLessPokemons
-    );
-
-    let morePokemonsButton = new Button(
-      pagePokemons,
-      "control-container__right",
-      this.getMorePokemons
-    );
+  getMorePokemons() {
+    this.nrPokemons = this.nrPokemons + 50;
+    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${this.nrPokemons}&limit=50`;
+    this.generateHTML();
   }
 
   generateHTML() {
@@ -81,13 +73,12 @@ class Page extends Component {
           )
       );
     })();
-  }
 
-  getMorePokemons() {
-    let initialPokemons = this.nrPokemons;
-    this.nrPokemons = this.nrPokemons + 50;
-    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${this.nrPokemons}&limit=${initialPokemons}`;
-    this.generateHTML();
+    let pagePokemons = document.querySelector(".control-container");
+
+    new Button(pagePokemons, "control-container__left", this.getLessPokemons);
+
+    new Button(pagePokemons, "control-container__right", this.getMorePokemons);
   }
 }
 
