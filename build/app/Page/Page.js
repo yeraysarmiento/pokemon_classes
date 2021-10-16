@@ -75,7 +75,7 @@ class Page extends Component {
 
     new Button(pagePokemons, "control-container__left", this.getLessPokemons);
 
-    new Button(pagePokemons, "control-container__right", () => this.nextPage);
+    new Button(pagePokemons, "control-container__right", () => this.nextPage());
   }
 
   deleteCards() {
