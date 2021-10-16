@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch src/styles.scss build/styles/styles.css"
+    "sass": "sass --watch src/styles.scss build/styles/styles.css",
+    "test": "jest --watchAll"
   },
   "keywords": [],
   "author": "",
@@ -16,9 +17,22 @@
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.2",
+    "jest": "^27.2.5",
     "sass": "^1.43.2"
   },
   "dependencies": {
     "D": "^1.0.0"
+  },
+  "jest": {
+    "testEnvironment": "jsdom"
+  },
+  "babel": {
+    "env": {
+      "test": {
+        "plugins": [
+          "@babel/plugin-transform-modules-commonjs"
+        ]
+      }
+    }
   }
 }
