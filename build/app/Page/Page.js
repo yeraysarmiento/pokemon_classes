@@ -1,36 +1,58 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
-class Page extends Component{
+class Page extends Component {
+  constructor(parentElement) {
+    super(parentElement, "container");
 
-
-  constructor(parentElement){
-    super(parentElement,"container");
-  
     this.generateHTML();
 
-    const controlsSection = this.element.querySelector(".controls");
+    /* const controlsSection = this.element.querySelector(".controls");
 
     const info = new Info(controlsSection,
      { total= this.totalSelected.filter((gentleman) => gentleman.selected).length });
 
-    const button = new Button (controlsSection, {text: "Select all", actionOnClick: () => this.onClickButton}); //La invocamos porque uando alguien la ejecute tiene que llamar a la otra
+    const button = new Button (controlsSection, {text: "Select all", actionOnClick: () => this.onClickButton}); */
   }
 
+  onClickButtonLeft() {}
 
-  onClickButton(){
-    console.log(`Click ${this.totalSelected}`);
-  }
+  generateHTML() {
+    const html = `
+    <header class="header">
+        <div>
+          <h1>
+            <a href="index.html">
+              <img
+                class="header__image"
+                src="img/logo-pokemon.png"
+                alt="Logo Pokemon"
+                width="100;"
+            /></a>
+          </h1>
+          <nav class="menu">
+            <ul class="menu__list">
+              <li class="menu__icon"></li>
+              <li class="menu__icon"></li>
+            </ul>
+            <div class="control-container">
+              <button class="control-container__left"></button>
+              <button class="control-container__right"></button>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <main>
+        <div>
+          <button></button>
+          <button></button>
+        </div>
+        <ul class="gallery">
+        </ul>
+      </main>
+       `;
 
-  generateHTML(){
-    const html= 
-    //html container <header>...
     this.element.innerHTML = html;
-
-    const gentlemenContainer= document.querySelector(".gentlemen");
-    this.gentlemen.map( (gentleman) => {
-    return new Gentleman(gentlemenContainer, gentleman); //Por cada objeto de java script me devuelve un componente gentleman y cada vez le paso un objeto distinto
-  })
-
   }
-
 }
+
+export default Page;
