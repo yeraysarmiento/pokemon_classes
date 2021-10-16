@@ -72,26 +72,26 @@ h1 {
 }
 .menu__icon:nth-of-type(1) {
   border-radius: 15px;
-  background-image: url(/img/nav-my-album.png);
+  background-image: url(/build/img/nav-my-album.png);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: center;
 }
 .menu__icon:nth-of-type(1):hover {
   background-color: #be5b3e;
-  background-image: url(/img/nav-my-album-white.png);
+  background-image: url(/build/img/nav-my-album-white.png);
 }
 .menu__icon:nth-of-type(2) {
   border-radius: 15px;
   border-radius: 15px;
-  background-image: url(/img/nav-detail.png);
+  background-image: url(/build/img/nav-detail.png);
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
 }
 .menu__icon:nth-of-type(2):hover {
   background-color: #be5b3e;
-  background-image: url(/img/nav-detail-white.png);
+  background-image: url(/build/img/nav-detail-white.png);
 }
 
 main {
@@ -110,7 +110,7 @@ main {
 }
 .control-container__left {
   cursor: pointer;
-  background-image: url(img/flecha-negra.png);
+  background-image: url(/build/img/flecha-negra.png);
   background-position: center;
   background-size: contain;
   border-radius: 50%;
@@ -122,11 +122,11 @@ main {
   border-radius: 50%;
 }
 .control-container__left:hover {
-  background-image: url(/img/flecha-pokemon.png);
+  background-image: url(/build/img/flecha-pokemon.png);
 }
 .control-container__right {
   cursor: pointer;
-  background-image: url(/img/flecha-negra.png);
+  background-image: url(/build/img/flecha-negra.png);
   background-position: center;
   background-size: contain;
   border: none;
@@ -136,7 +136,7 @@ main {
   border-radius: 50%;
 }
 .control-container__right:hover {
-  background-image: url(/img/flecha-pokemon.png);
+  background-image: url(/build/img/flecha-pokemon.png);
 }
 
 .gallery {
@@ -162,31 +162,43 @@ main {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px, rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
 }
 .pokemon-card.fire {
-  background: rgba(185, 92, 73, 0.5);
+  background: rgba(185, 92, 73, 0.3);
 }
 .pokemon-card.grass {
-  background: rgba(139, 137, 81, 0.5);
+  background: rgba(139, 137, 81, 0.3);
 }
 .pokemon-card.electric {
-  background: rgba(197, 149, 76, 0.5);
+  background: rgba(197, 149, 76, 0.4);
 }
 .pokemon-card.water {
-  background: rgba(69, 74, 100, 0.5);
+  background: rgba(97, 104, 143, 0.3);
 }
 .pokemon-card.normal {
-  background: rgba(206, 164, 126, 0.5);
+  background: rgba(206, 164, 126, 0.3);
 }
 .pokemon-card.bug {
-  background: rgba(181, 193, 176, 0.5);
+  background: rgba(181, 193, 176, 0.3);
 }
 .pokemon-card.ground {
-  background: rgba(125, 58, 49, 0.5);
+  background: rgba(125, 58, 49, 0.3);
 }
 .pokemon-card.poison {
-  background: rgba(119, 88, 145, 0.5);
+  background: rgba(119, 88, 145, 0.3);
 }
 .pokemon-card.normal {
-  background: rgba(206, 164, 126, 0.5);
+  background: rgba(206, 164, 126, 0.3);
+}
+.pokemon-card.psychic {
+  background: rgba(76, 14, 126, 0.3);
+}
+.pokemon-card.fairy {
+  background: rgba(220, 106, 178, 0.3);
+}
+.pokemon-card.ghost {
+  background: rgba(15, 12, 77, 0.3);
+}
+.pokemon-card.ice {
+  background: rgba(136, 146, 204, 0.3);
 }
 .pokemon-card:hover {
   border: 1px solid rgba(190, 91, 62, 0.8);
@@ -199,7 +211,7 @@ main {
 }
 .pokemon-card__pokeball > div {
   border-radius: 50%;
-  background-image: url(/img/logo-pokeball-vacio.png);
+  background-image: url(/build/img/logo-pokeball-vacio.png);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: center;
@@ -210,7 +222,7 @@ main {
   opacity: 0.5;
 }
 .pokemon-card__pokeball > div:hover {
-  background-image: url(/img/logo-pokeball-cazado.png);
+  background-image: url(/build/img/logo-pokeball-cazado.png);
 }
 .pokemon-card__image {
   margin-top: 20px;
@@ -225,7 +237,7 @@ main {
 }
 .pokemon-card__image > div {
   background: white;
-  opacity: 0.6;
+  opacity: 0.3;
   width: 120px;
   height: 120px;
   border-radius: 50%;
@@ -253,7 +265,7 @@ main {
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
   padding-top: 17px;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 /*# sourceMappingURL=styles.css.map */
