@@ -146,7 +146,7 @@ main {
   display: flex;
   display: grid;
   grid-template-columns: 160px 160px 160px 160px 160px;
-  grid-template-rows: 300px 300px 300px 300px 300px;
+  grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px 300px;
 }
 
 .pokemon-card {

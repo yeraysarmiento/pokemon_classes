@@ -6,7 +6,7 @@ class PokeCard extends Component {
   pokemonName;
   pokemonId;
   pokemonImage;
-  onePokemon = [];
+  pokemonType;
 
   constructor(parentElement, className, pokemonName, onePokemonUrl) {
     super(parentElement, className, "li");
@@ -17,12 +17,12 @@ class PokeCard extends Component {
       const getOnePokemon = new Service(this.onePokemonUrl);
       const showOnePokemon = await getOnePokemon.getData(this.onePokemonUrl);
       this.onePokemon = showOnePokemon;
-      console.log(this.onePokemon);
 
       this.pokemonId = this.onePokemon.id;
       this.pokemonImage =
         this.onePokemon.sprites.other["official-artwork"].front_default;
 
+      this.paintCard();
       this.generateHTML();
     })();
   }
@@ -46,6 +46,11 @@ class PokeCard extends Component {
               <h2 class="pokemon-card__name">${this.pokemonName}</h2>
             </div>`;
     this.element.innerHTML = pokemonHTML;
+  }
+
+  paintCard() {
+    this.pokemonType = this.onePokemon.types[0].type.name;
+    this.element.classList.add(this.pokemonType);
   }
 }
 
