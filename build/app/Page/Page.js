@@ -4,6 +4,7 @@ import PokeCard from "../PokeCard/PokeCard.js";
 
 class Page extends Component {
   pokemonArray;
+  urlPokemon;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
@@ -54,10 +55,10 @@ class Page extends Component {
       const getPokemon = new Service(this.urlPokemon);
       const showPokemon = await getPokemon.getData(this.urlPokemon);
       this.pokemonArray = showPokemon.results;
-      
+
       this.pokemonArray.map(
         (onePokemon) =>
-          new PokeCard(pokemonContainer, "pokemon-card", "li", onePokemon.url)
+          new PokeCard(pokemonContainer, "pokemon-card", onePokemon.url)
       );
     })();
   }

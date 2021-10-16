@@ -14,6 +14,7 @@ class PokeCard extends Component {
 
     (async () => {
       const getOnePokemon = new Service(this.onePokemonUrl);
+      console.log(getOnePokemon);
       const showOnePokemon = await getOnePokemon.getData(this.onePokemonUrl);
 
       this.onePokemon = showOnePokemon;
