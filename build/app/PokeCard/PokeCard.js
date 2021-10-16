@@ -22,9 +22,7 @@ class PokeCard extends Component {
       this.pokemonImage =
         this.onePokemon.sprites.other["official-artwork"].front_default;
 
-      this.pokemonType = this.onePokemon.types[0].type.name;
-      console.log(this.pokemonType);
-
+      this.paintCard();
       this.generateHTML();
     })();
   }
@@ -48,6 +46,11 @@ class PokeCard extends Component {
               <h2 class="pokemon-card__name">${this.pokemonName}</h2>
             </div>`;
     this.element.innerHTML = pokemonHTML;
+  }
+
+  paintCard() {
+    this.pokemonType = this.onePokemon.types[0].type.name;
+    this.element.classList.add(this.pokemonType);
   }
 }
 
