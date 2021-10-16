@@ -58,7 +58,12 @@ class Page extends Component {
 
       this.pokemonArray.map(
         (onePokemon) =>
-          new PokeCard(pokemonContainer, "pokemon-card", onePokemon.url)
+          new PokeCard(
+            pokemonContainer,
+            "pokemon-card",
+            onePokemon.name,
+            onePokemon.url
+          )
       );
     })();
   }
