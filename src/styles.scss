@@ -78,28 +78,28 @@ h1 {
 
     &:nth-of-type(1) {
       border-radius: 15px;
-      background-image: url(/img/nav-my-album.png);
+      background-image: url(/build/img/nav-my-album.png);
       background-repeat: no-repeat;
       background-size: 20px;
       background-position: center;
 
       &:hover {
         background-color: $main-color;
-        background-image: url(/img/nav-my-album-white.png);
+        background-image: url(/build/img/nav-my-album-white.png);
       }
     }
 
     &:nth-of-type(2) {
       border-radius: 15px;
       border-radius: 15px;
-      background-image: url(/img/nav-detail.png);
+      background-image: url(/build/img/nav-detail.png);
       background-repeat: no-repeat;
       background-size: 25px;
       background-position: center;
 
       &:hover {
         background-color: $main-color;
-        background-image: url(/img/nav-detail-white.png);
+        background-image: url(/build/img/nav-detail-white.png);
       }
     }
   }
@@ -186,7 +186,7 @@ main {
 
     & > div {
       border-radius: 50%;
-      background-image: url(/img/logo-pokeball-vacio.png);
+      background-image: url(/build/img/logo-pokeball-vacio.png);
       background-repeat: no-repeat;
       background-size: 20px;
       background-position: center;
