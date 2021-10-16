@@ -12,7 +12,7 @@ class Button extends Component {
   }
 
   events() {
-    this.element.addEventListener("click", () => this.actionOnClick);
+    this.element.addEventListener("click", this.actionOnClick);
   }
 }
 
