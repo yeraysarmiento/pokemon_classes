@@ -203,6 +203,12 @@ main {
   &.normal {
     background: $normal-type;
   }
+  &.psychic {
+    background: $psychic-type;
+  }
+  &.fairy {
+    background: $fairy-type;
+  }
 
   &:hover {
     border: 1px solid $action-color;
