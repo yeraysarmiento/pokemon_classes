@@ -1,24 +1,14 @@
 import Component from "../Component/Component.js";
 import Service from "../Service/Service.js";
+import PokeCard from "../PokeCard/PokeCard.js";
 
 class Page extends Component {
-  pokemonArray = [];
+  pokemonArray;
+  urlPokemon;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
     this.urlPokemon = urlPokemon;
-
-    (async () => {
-      const getPokemon = new Service(this.urlPokemon);
-      const showPokemon = await getPokemon.getData(this.urlPokemon);
-      const pokemonArray = showPokemon.results;
-      console.log(pokemonArray);
-
-      /* this.pokemonArray.map(
-        (singlePokemon) =>
-          new pokeCard("", "pokemon-card", "li", singlePokemon.url)
-      ); */
-    })();
 
     this.generateHTML();
   }
@@ -59,6 +49,23 @@ class Page extends Component {
        `;
 
     this.element.innerHTML = html;
+    const pokemonContainer = document.querySelector(".gallery");
+
+    (async () => {
+      const getPokemon = new Service(this.urlPokemon);
+      const showPokemon = await getPokemon.getData(this.urlPokemon);
+      this.pokemonArray = showPokemon.results;
+
+      this.pokemonArray.map(
+        (onePokemon) =>
+          new PokeCard(
+            pokemonContainer,
+            "pokemon-card",
+            onePokemon.name,
+            onePokemon.url
+          )
+      );
+    })();
   }
 }
 
