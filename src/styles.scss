@@ -209,6 +209,12 @@ main {
   &.fairy {
     background: $fairy-type;
   }
+  &.ghost {
+    background: $ghost-type;
+  }
+  &.ice {
+    background: $ice-type;
+  }
 
   &:hover {
     border: 1px solid $action-color;

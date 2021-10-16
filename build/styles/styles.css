@@ -168,7 +168,7 @@ main {
   background: rgba(139, 137, 81, 0.3);
 }
 .pokemon-card.electric {
-  background: rgba(197, 149, 76, 0.3);
+  background: rgba(197, 149, 76, 0.4);
 }
 .pokemon-card.water {
   background: rgba(97, 104, 143, 0.3);
@@ -193,6 +193,12 @@ main {
 }
 .pokemon-card.fairy {
   background: rgba(220, 106, 178, 0.3);
+}
+.pokemon-card.ghost {
+  background: rgba(15, 12, 77, 0.3);
+}
+.pokemon-card.ice {
+  background: rgba(136, 146, 204, 0.3);
 }
 .pokemon-card:hover {
   border: 1px solid rgba(190, 91, 62, 0.8);
