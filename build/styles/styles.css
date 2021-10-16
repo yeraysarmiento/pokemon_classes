@@ -210,7 +210,7 @@ main {
   opacity: 0.5;
 }
 .pokemon-card__pokeball > div:hover {
-  opacity: 1;
+  background-image: url(/build/img/logo-pokeball-cazado.png);
 }
 .pokemon-card__image {
   margin-top: 20px;
