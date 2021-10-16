@@ -13,16 +13,8 @@ class Page extends Component {
     this.urlPokemon = urlPokemon;
 
     this.generateHTML();
-    this.generateCards();
     this.generateButtons();
-  }
-
-  getMorePokemons() {
-    console.log(nrPokemons);
-    this.nrPokemons = this.nrPokemons + 50;
-    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${this.nrPokemons}&limit=50`;
-
-    this.generateHTML();
+    this.generateCards();
   }
 
   generateHTML() {
@@ -50,10 +42,6 @@ class Page extends Component {
         </div>
       </header>
       <main>
-        <div>
-          <button></button>
-          <button></button>
-        </div>
         <ul class="gallery">
         </ul>
       </main>
@@ -85,13 +73,40 @@ class Page extends Component {
   generateButtons() {
     let pagePokemons = document.querySelector(".control-container");
 
-    new Button(pagePokemons, "control-container__left", this.getLessPokemons);
-
-    new Button(
-      pagePokemons,
-      "control-container__right",
-      () => this.getMorePokemons
+    new Button(pagePokemons, "control-container__left", () =>
+      this.previousPage()
     );
+
+    new Button(pagePokemons, "control-container__right", () => this.nextPage());
+  }
+
+  deleteCards() {
+    let deletePokemon = document.querySelector(".gallery");
+    while (deletePokemon.firstChild) {
+      deletePokemon.removeChild(deletePokemon.firstChild);
+    }
+  }
+
+  previousPage() {
+    this.deleteCards();
+    this.generateNewUrl(-1);
+    this.generateCards();
+  }
+
+  nextPage() {
+    this.deleteCards();
+    this.generateNewUrl(1);
+    this.generateCards();
+  }
+
+  generateNewUrl(pageNumber) {
+    this.nrPokemons = this.nrPokemons + pageNumber;
+    if (this.nrPokemons < 0) {
+      this.nrPokemons = 0;
+    }
+    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${
+      this.nrPokemons * 50
+    }&limit=50`;
   }
 }
 
