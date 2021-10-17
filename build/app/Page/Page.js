@@ -15,6 +15,9 @@ class Page extends Component {
     this.generateHTML();
     this.generateButtons();
     this.generateCards();
+
+    let makePokedex = document.querySelector(".menu__icon:nth-of-type(1)");
+    makePokedex.addEventListener("click", () => this.generatePokedex());
   }
 
   generateHTML() {
@@ -32,7 +35,7 @@ class Page extends Component {
           </h1>
           <nav class="menu">
             <ul class="menu__list">
-              <li class="menu__icon"><a href="pokedex.html"></a></li>
+              <li class="menu__icon"></li>
               <li class="menu__icon"></li>
             </ul>
             <div class="control-container">
@@ -107,6 +110,29 @@ class Page extends Component {
     this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${
       this.nrPokemons * 50
     }&limit=50`;
+  }
+
+  generatePokedex() {
+    this.deleteCards();
+    this.urlPokemon = "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
+
+    const pokemonContainer = document.querySelector(".gallery");
+
+    (async () => {
+      const getPokemon = new Service(this.urlPokemon);
+      const showPokemon = await getPokemon.getData(this.urlPokemon);
+      this.pokemonArray = showPokemon;
+
+      this.pokemonArray.map(
+        (onePokemon) =>
+          new PokeCard(
+            pokemonContainer,
+            "pokemon-card",
+            onePokemon.name,
+            onePokemon.url
+          )
+      );
+    })();
   }
 }
 
