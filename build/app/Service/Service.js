@@ -12,24 +12,15 @@ class Service {
   }
 
   async createData(pokemon) {
-    try {
-      const response = await fetch(this.urlAPI, {
-        method: "POST",
-        body: JSON.stringify(pokemon),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
-      if (response.ok) {
-        const response = await response.json();
-        document.write("Pokemon cargado en API");
-        return response;
-      } else {
-        throw new Error(response.statusText);
-      }
-    } catch (err) {
-      console.log(`Error al realizar la petición AJAX: ${err.message}`);
-    }
+    let response = await fetch(this.urlAPI, {
+      method: "POST",
+      body: JSON.stringify(pokemon),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    response = await response.json();
+    return response;
   }
 }
 

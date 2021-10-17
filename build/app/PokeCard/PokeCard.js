@@ -61,7 +61,6 @@ class PokeCard extends Component {
       "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
     const postPokemon = new Service(myPokedexURL);
     postPokemon.createData({ name: this.pokemonName, url: this.onePokemonUrl });
-    console.log({ name: this.pokemonName, url: this.onePokemonUrl });
   }
 }
 
