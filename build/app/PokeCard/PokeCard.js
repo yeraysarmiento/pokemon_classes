@@ -7,6 +7,7 @@ class PokeCard extends Component {
   pokemonId;
   pokemonImage;
   pokemonType;
+  onePokemon;
 
   constructor(parentElement, className, pokemonName, onePokemonUrl) {
     super(parentElement, className, "li");
@@ -59,8 +60,8 @@ class PokeCard extends Component {
     const myPokedexURL =
       "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
     const postPokemon = new Service(myPokedexURL);
-    postPokemon.createData(this.showOnePokemon);
-    console.log(this.showOnePokemon);
+    postPokemon.createData({ name: this.pokemonName, url: this.onePokemonUrl });
+    console.log({ name: this.pokemonName, url: this.onePokemonUrl });
   }
 }
 
