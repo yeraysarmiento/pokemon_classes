@@ -146,6 +146,7 @@ main {
     height: 30px;
     background-color: transparent;
     border-radius: 50%;
+
     &:hover {
       background-image: url(/build/img/flecha-pokemon.png);
     }
@@ -315,3 +316,4 @@ main {
     font-size: 17px;
   }
 }
+
