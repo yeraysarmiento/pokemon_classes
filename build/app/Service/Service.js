@@ -11,10 +11,10 @@ class Service {
     return pokemonData;
   }
 
-  async createData(pokemon) {
+  async createData(item) {
     let response = await fetch(this.urlAPI, {
       method: "POST",
-      body: JSON.stringify(pokemon),
+      body: JSON.stringify(item),
       headers: {
         "Content-Type": "application/json",
       },
@@ -24,7 +24,8 @@ class Service {
   }
 
   async deleteData(id) {
-    fetch(`${this.urlAPI}${id}`, { method: "DELETE" });
+    let response = await fetch(`${this.urlAPI}${id}`, { method: "DELETE" });
+    console.log(response);
     if (response.ok) {
       return true;
     }

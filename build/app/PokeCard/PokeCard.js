@@ -1,4 +1,5 @@
 import Component from "../Component/Component.js";
+import Page from "../Page/Page.js";
 import Service from "../Service/Service.js";
 
 class PokeCard extends Component {
@@ -9,12 +10,22 @@ class PokeCard extends Component {
   pokemonType;
   onePokemon;
   catched;
+  myPokedexURL = "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
 
-  constructor(parentElement, className, pokemonName, onePokemonUrl, catched) {
+  constructor(
+    parentElement,
+    className,
+    pokemonName,
+    onePokemonUrl,
+    catched,
+    idAPI
+  ) {
     super(parentElement, className, "li");
     this.onePokemonUrl = onePokemonUrl;
     this.pokemonName = pokemonName;
-    this.catched = catched ? "catched" : "";
+    this.catched = catched ? "class='catched'" : "";
+    this.deletePokemon = catched ? "class = 'pokemon-card__delete-button'" : "";
+    this.idAPI = idAPI;
 
     (async () => {
       const getOnePokemon = new Service(this.onePokemonUrl);
@@ -28,15 +39,25 @@ class PokeCard extends Component {
       this.paintCard();
       this.generateHTML();
 
-      const pokeball = this.element.querySelector(".pokemon-card__pokeball");
+      const pokeball = this.element.querySelector(
+        ".pokemon-card__pokeball > div:nth-of-type(1)"
+      );
       pokeball.addEventListener("click", () => this.catchPokemon());
+
+      if (idAPI) {
+        const freePokemon = this.element.querySelector(
+          ".pokemon-card__delete-button"
+        );
+        freePokemon.addEventListener("click", () => this.freePokemon());
+      }
     })();
   }
 
   generateHTML() {
     const pokemonHTML = `
             <div class="pokemon-card__pokeball">
-              <div class="${this.catched}"></div>
+              <div ${this.catched}></div>
+              <div ${this.deletePokemon}></div>
             </div>
             <div class="pokemon-card__image">
               <div></div>
@@ -61,14 +82,12 @@ class PokeCard extends Component {
 
   catchPokemon() {
     const pokeballPrint = this.element.querySelector(
-      ".pokemon-card__pokeball > div"
+      ".pokemon-card__pokeball > div:nth-of-type(1)"
     );
     pokeballPrint.classList.add("catched");
 
     this.printPokeball();
-    const myPokedexURL =
-      "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
-    const postPokemon = new Service(myPokedexURL);
+    const postPokemon = new Service(this.myPokedexURL);
     postPokemon.createData({
       name: this.pokemonName,
       url: this.onePokemonUrl,
@@ -81,6 +100,13 @@ class PokeCard extends Component {
       ".pokemon-card__pokeball > div"
     );
     pokeballPrint.classList.add("catched");
+  }
+
+  freePokemon() {
+    const freePokemonAPI = new Service(this.myPokedexURL).deleteData(
+      this.idAPI
+    );
+    this.element.remove();
   }
 }
 
