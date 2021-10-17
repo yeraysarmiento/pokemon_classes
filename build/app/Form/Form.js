@@ -6,13 +6,14 @@ class Form extends Component {
   pokemonImage;
 
   constructor(parentElement, className) {
-    super(parentElement, className, "form");
+    super(parentElement, className, "li");
 
     this.generateHTML();
   }
 
   generateHTML() {
     const formHTML = `
+    <form>
       <div class="form-container">
         <h3>CREATE YOUR OWN POKEMON!</h3>
         <p>NAME:</p>
@@ -32,10 +33,13 @@ class Form extends Component {
             <input type="reset" value="">
             <input type="submit" value="">
         </p>
+        </form>
 `;
 
     this.element.innerHTML = formHTML;
   }
+
+  getFormInformation() {}
 }
 
 export default Form;
