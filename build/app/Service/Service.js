@@ -25,7 +25,6 @@ class Service {
 
   async deleteData(id) {
     let response = await fetch(`${this.urlAPI}${id}`, { method: "DELETE" });
-    console.log(response);
     if (response.ok) {
       return true;
     }
