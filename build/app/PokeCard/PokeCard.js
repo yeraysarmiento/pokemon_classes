@@ -13,6 +13,8 @@ class PokeCard extends Component {
     this.onePokemonUrl = onePokemonUrl;
     this.pokemonName = pokemonName;
 
+    this.element.addEventListener("click", () => this.catchPokemon());
+
     (async () => {
       const getOnePokemon = new Service(this.onePokemonUrl);
       const showOnePokemon = await getOnePokemon.getData(this.onePokemonUrl);
@@ -51,6 +53,14 @@ class PokeCard extends Component {
   paintCard() {
     this.pokemonType = this.onePokemon.types[0].type.name;
     this.element.classList.add(this.pokemonType);
+  }
+
+  catchPokemon() {
+    const myPokedexURL =
+      "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
+    const postPokemon = new Service(myPokedexURL);
+    postPokemon.createData(this.showOnePokemon);
+    console.log(this.showOnePokemon);
   }
 }
 
