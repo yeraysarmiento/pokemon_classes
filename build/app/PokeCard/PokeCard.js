@@ -1,4 +1,5 @@
 import Component from "../Component/Component.js";
+import Page from "../Page/Page.js";
 import Service from "../Service/Service.js";
 
 class PokeCard extends Component {
@@ -105,6 +106,7 @@ class PokeCard extends Component {
     const freePokemonAPI = new Service(this.myPokedexURL).deleteData(
       this.idAPI
     );
+    this.element.remove();
   }
 }
 
