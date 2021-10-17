@@ -29,7 +29,7 @@ class Pokedex extends Component {
           </h1>
           <nav class="menu">
             <ul class="menu__list">
-              <li class="menu__icon"><a href="./pokedex.html"></a></li>
+              <li class="menu__icon menu__icon--selected"><a href="./pokedex.html"></a></li>
               <li class="menu__icon"></li>
             </ul>
           </nav>

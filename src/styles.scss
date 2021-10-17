@@ -88,6 +88,11 @@ h1 {
       background-size: 20px;
       background-position: center;
 
+      &.menu__icon--selected {
+        background-color: $main-color;
+        background-image: url(/build/img/nav-my-album-white.png);
+      }
+
       &:hover {
         background-color: $main-color;
         background-image: url(/build/img/nav-my-album-white.png);
@@ -101,6 +106,11 @@ h1 {
       background-repeat: no-repeat;
       background-size: 25px;
       background-position: center;
+
+      &.menu__icon--selected {
+        background-color: $main-color;
+        background-image: url(/build/img/nav-detail-white.png);
+      }
 
       &:hover {
         background-color: $main-color;
