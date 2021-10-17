@@ -138,6 +138,9 @@ class Page extends Component {
           )
       );
     })();
+
+    let pagePokemons = document.querySelector(".control-container");
+    pagePokemons.remove();
   }
 }
 
