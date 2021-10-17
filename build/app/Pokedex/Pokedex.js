@@ -44,13 +44,13 @@ class Pokedex extends Component {
     this.element.innerHTML = html;
   }
 
-  /*generateCards() {
+  generateCards() {
     const pokemonContainer = document.querySelector(".gallery");
 
     (async () => {
       const getPokemon = new Service(this.urlPokemon);
       const showPokemon = await getPokemon.getData(this.urlPokemon);
-      this.pokemonArray = showPokemon.results;
+      this.pokemonArray = showPokemon;
 
       this.pokemonArray.map(
         (onePokemon) =>
@@ -61,7 +61,8 @@ class Pokedex extends Component {
             onePokemon.url
           )
       );
-    })();*/
+    })();
+  }
 }
 
 export default Pokedex;
