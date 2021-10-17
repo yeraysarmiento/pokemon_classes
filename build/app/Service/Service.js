@@ -25,3 +25,19 @@ class Service {
 }
 
 export default Service;
+
+
+
+/*
+async createData(pokemon) {
+    const response = await fetch(this.urlAPI, {
+      method: "POST",
+      body: JSON.stringify(pokemon),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    const newPokemon = response.json();
+    return newPokemon;
+  }
+  */

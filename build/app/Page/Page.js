@@ -32,7 +32,7 @@ class Page extends Component {
           </h1>
           <nav class="menu">
             <ul class="menu__list">
-              <li class="menu__icon"></li>
+              <li class="menu__icon"><a href="./pokedex.html"></a></li>
               <li class="menu__icon"></li>
             </ul>
             <div class="control-container">

@@ -70,6 +70,10 @@ h1 {
   margin: 2px;
   cursor: pointer;
 }
+.menu__icon a {
+  height: 100%;
+  width: 100%;
+}
 .menu__icon:nth-of-type(1) {
   border-radius: 15px;
   background-image: url(/build/img/nav-my-album.png);
