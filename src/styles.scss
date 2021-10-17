@@ -258,6 +258,11 @@ main {
       &:hover {
         background-image: url(/build/img/logo-pokeball-cazado.png);
       }
+
+      &.catched {
+        background-image: url(/build/img/logo-pokeball-cazado.png);
+        opacity: 1;
+      }
     }
   }
 

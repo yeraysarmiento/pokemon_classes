@@ -26,9 +26,7 @@ class PokeCard extends Component {
       this.paintCard();
       this.generateHTML();
 
-      const pokeball = this.element.querySelector(
-        ".pokemon-card__pokeball div"
-      );
+      const pokeball = this.element.querySelector(".pokemon-card__pokeball");
       pokeball.addEventListener("click", () => this.catchPokemon());
     })();
   }
@@ -38,7 +36,7 @@ class PokeCard extends Component {
             <div class="pokemon-card__pokeball">
               <div></div>
             </div>
-            <div class="pokemon-card__image ${this.catchedPokemon}">
+            <div class="pokemon-card__image">
               <div></div>
               <img
                 src="${this.pokemonImage}"
@@ -60,6 +58,7 @@ class PokeCard extends Component {
   }
 
   catchPokemon() {
+    this.printPokeball();
     const myPokedexURL =
       "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
     const postPokemon = new Service(myPokedexURL);
@@ -68,6 +67,13 @@ class PokeCard extends Component {
       url: this.onePokemonUrl,
       //catched: true,
     });
+  }
+
+  printPokeball() {
+    const pokeballPrint = this.element.querySelector(
+      ".pokemon-card__pokeball > div"
+    );
+    pokeballPrint.classList.add("catched");
   }
 }
 
