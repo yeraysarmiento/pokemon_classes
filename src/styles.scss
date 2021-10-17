@@ -339,7 +339,7 @@ main {
 
 .form-container {
   width: 100%;
-  font-family: $main-font;
+  font-family: $title-font;
   font-size: 12px;
   display: flex;
   flex-wrap: wrap;
@@ -348,10 +348,12 @@ main {
   height: 160px;
 
   & h3 {
+    font-size: 13px;
     width: 100%;
     margin: 10px 0;
     margin-bottom: 20px;
     text-align: center;
+    line-height: 18x;
   }
 
   & > p {
@@ -359,6 +361,8 @@ main {
     text-align: left;
     width: 100%;
     display: flex;
+    font-family: $main-font;
+    font-size: 10px;
   }
 
   & select {

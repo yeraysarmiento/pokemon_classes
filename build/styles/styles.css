@@ -304,7 +304,7 @@ main {
 
 .form-container {
   width: 100%;
-  font-family: "Roboto", sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 12px;
   display: flex;
   flex-wrap: wrap;
@@ -313,16 +313,20 @@ main {
   height: 160px;
 }
 .form-container h3 {
+  font-size: 13px;
   width: 100%;
   margin: 10px 0;
   margin-bottom: 20px;
   text-align: center;
+  line-height: 18x;
 }
 .form-container > p {
   margin-bottom: 5px;
   text-align: left;
   width: 100%;
   display: flex;
+  font-family: "Roboto", sans-serif;
+  font-size: 10px;
 }
 .form-container select {
   width: 100%;

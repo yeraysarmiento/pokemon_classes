@@ -1,4 +1,4 @@
-import Component from "../Component/Component";
+import Component from "../Component/Component.js";
 
 class Form extends Component {
   pokemonName;
@@ -7,12 +7,14 @@ class Form extends Component {
 
   constructor(parentElement, className) {
     super(parentElement, className, "form");
+
+    this.generateHTML();
   }
 
   generateHTML() {
-    const formHTML = `<form class="pokemon-card" action="ejemplo.php" method="get">
+    const formHTML = `
       <div class="form-container">
-        <h3>YOUR POKEMON!</h3>
+        <h3>CREATE YOUR OWN POKEMON!</h3>
         <p>NAME:</p>
         <input type="text" name="pokemonName">
         <p>IMAGE URL:</p>
@@ -30,7 +32,7 @@ class Form extends Component {
             <input type="reset" value="">
             <input type="submit" value="">
         </p>
-    </form>`;
+`;
 
     this.element.innerHTML = formHTML;
   }
