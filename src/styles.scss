@@ -89,8 +89,9 @@ h1 {
       background-position: center;
 
       &.menu__icon--selected {
-        background-color: $main-color;
+        background-color: rgb(169, 29, 1);
         background-image: url(/build/img/nav-my-album-white.png);
+        pointer-events: none;
       }
 
       &:hover {

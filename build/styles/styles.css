@@ -82,8 +82,9 @@ h1 {
   background-position: center;
 }
 .menu__icon:nth-of-type(1).menu__icon--selected {
-  background-color: #be5b3e;
+  background-color: #a91d01;
   background-image: url(/build/img/nav-my-album-white.png);
+  pointer-events: none;
 }
 .menu__icon:nth-of-type(1):hover {
   background-color: #be5b3e;
