@@ -129,7 +129,8 @@ class Page extends Component {
             pokemonContainer,
             "pokemon-card",
             onePokemon.name,
-            onePokemon.url
+            onePokemon.url,
+            onePokemon.catched
           )
       );
     })();
