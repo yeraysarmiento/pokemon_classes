@@ -26,8 +26,6 @@ class Service {
 
 export default Service;
 
-
-
 /*
 async createData(pokemon) {
     const response = await fetch(this.urlAPI, {
