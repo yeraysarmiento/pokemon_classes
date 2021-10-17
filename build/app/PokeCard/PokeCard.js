@@ -15,6 +15,7 @@ class PokeCard extends Component {
     this.onePokemonUrl = onePokemonUrl;
     this.pokemonName = pokemonName;
     this.catched = catched ? "catched" : "";
+    this.deletePokemon = catched ? "class = 'pokemon-card__delete-button'" : "";
 
     (async () => {
       const getOnePokemon = new Service(this.onePokemonUrl);
@@ -37,6 +38,7 @@ class PokeCard extends Component {
     const pokemonHTML = `
             <div class="pokemon-card__pokeball">
               <div class="${this.catched}"></div>
+              <div "${this.deletePokemon}"></div>
             </div>
             <div class="pokemon-card__image">
               <div></div>
