@@ -54,6 +54,9 @@ class PokeCard extends Component {
   }
 
   generateHTML() {
+    this.pokemonName =
+      this.pokemonName.charAt(0).toUpperCase() + this.pokemonName.slice(1);
+
     const pokemonHTML = `
             <div class="pokemon-card__pokeball">
               <div ${this.catched}></div>
