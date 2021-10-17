@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch src/styles.scss build/styles/styles.css",
+    "compile-css": "sass src/styles.scss build/styles/styles.css",
     "test": "jest --watchAll"
   },
   "keywords": [],
