@@ -243,7 +243,6 @@ main {
     width: 100%;
     height: 20px;
     position: relative;
-    cursor: pointer;
 
     & > div:nth-of-type(1) {
       border-radius: 50%;
@@ -256,12 +255,14 @@ main {
       right: 0;
       position: absolute;
       opacity: 0.5;
+      cursor: pointer;
 
       &:hover {
         background-image: url(/build/img/logo-pokeball-cazado.png);
       }
 
       &.catched {
+        cursor: initial;
         background-image: url(/build/img/logo-pokeball-cazado.png);
         opacity: 1;
       }
@@ -269,13 +270,19 @@ main {
   }
 
   &__delete-button {
-    border: 3px solid black;
-    background: red;
-    width: 50px;
-    height: 50px;
+    cursor: pointer;
+    background-image: url(/build/img/cruz.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 12px;
+    height: 12px;
     position: relative;
     left: 0;
-    z-index: 1;
+    opacity: 0.5;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   &__image {
