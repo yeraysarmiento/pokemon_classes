@@ -12,6 +12,22 @@ class Service {
   }
 
   async createData(pokemon) {
+    let response = await fetch(this.urlAPI, {
+      method: "POST",
+      body: JSON.stringify(pokemon),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    });
+    response = await response.json();
+    return response;
+  }
+}
+
+export default Service;
+
+/*
+async createData(pokemon) {
     const response = await fetch(this.urlAPI, {
       method: "POST",
       body: JSON.stringify(pokemon),
@@ -22,6 +38,4 @@ class Service {
     const newPokemon = response.json();
     return newPokemon;
   }
-}
-
-export default Service;
+  */

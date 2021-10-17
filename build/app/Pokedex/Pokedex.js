@@ -1,19 +1,16 @@
 import Component from "../Component/Component.js";
 import Service from "../Service/Service.js";
 import PokeCard from "../PokeCard/PokeCard.js";
-import Button from "../Button/Button.js";
 
-class Page extends Component {
+class Pokedex extends Component {
   pokemonArray;
   urlPokemon;
-  nrPokemons = 0;
 
   constructor(parentElement, urlPokemon) {
     super(parentElement, "container");
     this.urlPokemon = urlPokemon;
 
     this.generateHTML();
-    this.generateButtons();
     this.generateCards();
   }
 
@@ -32,12 +29,9 @@ class Page extends Component {
           </h1>
           <nav class="menu">
             <ul class="menu__list">
-              <li class="menu__icon"><a href="./pokedex.html"></a></li>
+              <li class="menu__icon menu__icon--selected"><a href="./pokedex.html"></a></li>
               <li class="menu__icon"></li>
             </ul>
-            <div class="control-container">
-
-            </div>
           </nav>
         </div>
       </header>
@@ -56,7 +50,7 @@ class Page extends Component {
     (async () => {
       const getPokemon = new Service(this.urlPokemon);
       const showPokemon = await getPokemon.getData(this.urlPokemon);
-      this.pokemonArray = showPokemon.results;
+      this.pokemonArray = showPokemon;
 
       this.pokemonArray.map(
         (onePokemon) =>
@@ -69,45 +63,6 @@ class Page extends Component {
       );
     })();
   }
-
-  generateButtons() {
-    let pagePokemons = document.querySelector(".control-container");
-
-    new Button(pagePokemons, "control-container__left", () =>
-      this.previousPage()
-    );
-
-    new Button(pagePokemons, "control-container__right", () => this.nextPage());
-  }
-
-  deleteCards() {
-    let deletePokemon = document.querySelector(".gallery");
-    while (deletePokemon.firstChild) {
-      deletePokemon.removeChild(deletePokemon.firstChild);
-    }
-  }
-
-  previousPage() {
-    this.deleteCards();
-    this.generateNewUrl(-1);
-    this.generateCards();
-  }
-
-  nextPage() {
-    this.deleteCards();
-    this.generateNewUrl(1);
-    this.generateCards();
-  }
-
-  generateNewUrl(pageNumber) {
-    this.nrPokemons = this.nrPokemons + pageNumber;
-    if (this.nrPokemons < 0) {
-      this.nrPokemons = 0;
-    }
-    this.urlPokemon = `https://pokeapi.co/api/v2/pokemon?offset=${
-      this.nrPokemons * 50
-    }&limit=50`;
-  }
 }
 
-export default Page;
+export default Pokedex;
