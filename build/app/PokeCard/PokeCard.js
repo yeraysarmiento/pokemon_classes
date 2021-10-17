@@ -38,7 +38,7 @@ class PokeCard extends Component {
             <div class="pokemon-card__pokeball">
               <div></div>
             </div>
-            <div class="pokemon-card__image">
+            <div class="pokemon-card__image ${this.catchedPokemon}">
               <div></div>
               <img
                 src="${this.pokemonImage}"
@@ -66,8 +66,8 @@ class PokeCard extends Component {
     postPokemon.createData({
       name: this.pokemonName,
       url: this.onePokemonUrl,
+      //catched: true,
     });
-    this.captured = true;
   }
 }
 
