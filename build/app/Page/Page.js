@@ -113,6 +113,9 @@ class Page extends Component {
   }
 
   generatePokedex() {
+    let changeNavButton = document.querySelector(".menu__icon:nth-of-type(1)");
+    changeNavButton.classList.add("menu__icon--selected");
+
     this.deleteCards();
     this.urlPokemon = "https://ysarmiento-pokemon-api-2.herokuapp.com/pokemon/";
 
