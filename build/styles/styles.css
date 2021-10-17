@@ -76,35 +76,35 @@ h1 {
 }
 .menu__icon:nth-of-type(1) {
   border-radius: 15px;
-  background-image: url(/build/img/nav-my-album.png);
+  background-image: url(../img/nav-my-album.png);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: center;
 }
 .menu__icon:nth-of-type(1).menu__icon--selected {
   background-color: #a91d01;
-  background-image: url(/build/img/nav-my-album-white.png);
+  background-image: url(../img/nav-my-album-white.png);
   pointer-events: none;
 }
 .menu__icon:nth-of-type(1):hover {
   background-color: #be5b3e;
-  background-image: url(/build/img/nav-my-album-white.png);
+  background-image: url(../img/nav-my-album-white.png);
 }
 .menu__icon:nth-of-type(2) {
   border-radius: 15px;
   border-radius: 15px;
-  background-image: url(/build/img/nav-detail.png);
+  background-image: url(../img/nav-detail.png);
   background-repeat: no-repeat;
   background-size: 25px;
   background-position: center;
 }
 .menu__icon:nth-of-type(2).menu__icon--selected {
   background-color: #be5b3e;
-  background-image: url(/build/img/nav-detail-white.png);
+  background-image: url(../img/nav-detail-white.png);
 }
 .menu__icon:nth-of-type(2):hover {
   background-color: #be5b3e;
-  background-image: url(/build/img/nav-detail-white.png);
+  background-image: url(../img/nav-detail-white.png);
 }
 
 main {
@@ -123,7 +123,7 @@ main {
 }
 .control-container__left {
   cursor: pointer;
-  background-image: url(/build/img/flecha-negra.png);
+  background-image: url(../img/flecha-negra.png);
   background-position: center;
   background-size: contain;
   border-radius: 50%;
@@ -135,11 +135,11 @@ main {
   border-radius: 50%;
 }
 .control-container__left:hover {
-  background-image: url(/build/img/flecha-pokemon.png);
+  background-image: url(../img/flecha-pokemon.png);
 }
 .control-container__right {
   cursor: pointer;
-  background-image: url(/build/img/flecha-negra.png);
+  background-image: url(../img/flecha-negra.png);
   background-position: center;
   background-size: contain;
   border: none;
@@ -149,7 +149,7 @@ main {
   border-radius: 50%;
 }
 .control-container__right:hover {
-  background-image: url(/build/img/flecha-pokemon.png);
+  background-image: url(../img/flecha-pokemon.png);
 }
 
 .gallery {
@@ -224,7 +224,7 @@ main {
 }
 .pokemon-card__pokeball > div:nth-of-type(1) {
   border-radius: 50%;
-  background-image: url(/build/img/logo-pokeball-vacio.png);
+  background-image: url(../img/logo-pokeball-vacio.png);
   background-repeat: no-repeat;
   background-size: 20px;
   background-position: center;
@@ -236,16 +236,16 @@ main {
   cursor: pointer;
 }
 .pokemon-card__pokeball > div:nth-of-type(1):hover {
-  background-image: url(/build/img/logo-pokeball-cazado.png);
+  background-image: url(../img/logo-pokeball-cazado.png);
 }
 .pokemon-card__pokeball > div:nth-of-type(1).catched {
   cursor: initial;
-  background-image: url(/build/img/logo-pokeball-cazado.png);
+  background-image: url(../img/logo-pokeball-cazado.png);
   opacity: 1;
 }
 .pokemon-card__delete-button {
   cursor: pointer;
-  background-image: url(/build/img/cruz.svg);
+  background-image: url(../img/cruz.svg);
   background-repeat: no-repeat;
   background-position: center;
   width: 12px;
