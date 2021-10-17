@@ -302,4 +302,62 @@ main {
   font-size: 17px;
 }
 
+.form-container {
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  font-size: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  position: relative;
+  height: 160px;
+}
+.form-container h3 {
+  width: 100%;
+  margin: 10px 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+.form-container > p {
+  margin-bottom: 5px;
+  text-align: left;
+  width: 100%;
+  display: flex;
+}
+.form-container select {
+  width: 100%;
+  border-radius: 20px;
+  height: 20px;
+}
+.form-container > input {
+  margin: 5px 0;
+  width: 100%;
+  border: none;
+  border-radius: 20px;
+  height: 20px;
+  margin-bottom: 15px;
+}
+
+.pokemon-card > p {
+  height: 20%;
+  position: relative;
+  top: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+.pokemon-card > p input {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: none;
+  margin-left: 10px;
+}
+.pokemon-card > p input:nth-of-type(1) {
+  background: darkred;
+}
+.pokemon-card > p input:nth-of-type(2) {
+  background: darkolivegreen;
+}
+
 /*# sourceMappingURL=styles.css.map */
