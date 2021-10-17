@@ -275,6 +275,7 @@ main {
     height: 50px;
     position: relative;
     left: 0;
+    z-index: 1;
   }
 
   &__image {
@@ -313,9 +314,10 @@ main {
   &__id {
     font-size: 8px;
     font-weight: 300;
+    line-height: 13px;
     width: 40px;
     border-radius: 20px;
-    background: rgba(109, 109, 109, 0.4);
+    background: rgba(109, 109, 109, 0.2);
     text-align: center;
   }
 
