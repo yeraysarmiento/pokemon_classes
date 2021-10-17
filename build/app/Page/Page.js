@@ -2,6 +2,7 @@ import Component from "../Component/Component.js";
 import Service from "../Service/Service.js";
 import PokeCard from "../PokeCard/PokeCard.js";
 import Button from "../Button/Button.js";
+import Form from "../Form/Form.js";
 
 class Page extends Component {
   pokemonArray;
@@ -138,6 +139,11 @@ class Page extends Component {
           )
       );
     })();
+
+    let pagePokemons = document.querySelector(".control-container");
+    pagePokemons.remove();
+
+    new Form(pokemonContainer, "pokemon-card pokemon-card--form");
   }
 }
 
