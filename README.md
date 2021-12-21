@@ -12,7 +12,7 @@ The front-end has been built with vanilla Javascript (using classes) and Jest fo
 
 ## Screenshots
 
-
+<img width="921" alt="PokemonApp" src="https://user-images.githubusercontent.com/26439964/146955138-97d8322e-04b4-481d-b499-07bacbda0ee4.png">
 
 ## Installation
 
