@@ -8,7 +8,7 @@ This app has been developed in a weekend during my ISDI Coders full-stack develo
 
 ## Technologies
 
-The front-end has been built with vanilla Javascript (using classes), SASS and Jest for testing it.
+The front-end has been built using classes from Javascript, SASS and Jest for testing it.
 
 ## Screenshots
 
