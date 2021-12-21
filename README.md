@@ -3,7 +3,7 @@
 Javascript classes challenge about listing all Pokemon from the PokeApi with an API Rest.
 It has been developed as a SPA, you can see all existing pokemon, catch your favourite and see them in your Pokedex section!
 
-Own has been developed in a weekend during my ISDI Coders full-stack development bootcamp.
+This app has been developed in a weekend during my ISDI Coders full-stack development bootcamp.
 
 
 ## Technologies
